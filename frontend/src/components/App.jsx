@@ -232,7 +232,7 @@ function App() {
       .then((res) => {
         setIsLoading(false);
         handleLogin();
-        localStorage.setItem('token', `${res.token}`);
+        localStorage.setItem('token', `${res.jwt}`);
         navigate('/');
         auth.checkToken(res.token)
           .then((res) => {
