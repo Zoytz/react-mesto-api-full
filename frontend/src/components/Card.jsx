@@ -10,7 +10,7 @@ const Card = React.memo((props) => {
     `card__del-btn ${isOwn ? '' : 'card__del-btn_disabled'}`
   );
 
-  const isLiked = props.card.likes.some(i => i._id === userInfo._id);
+  const isLiked = props.card.likes.some(i => i === userInfo._id);
 
   const cardLikeButtonClassName = (
     `card__like ${isLiked ? 'card__like_active' : ''}`
