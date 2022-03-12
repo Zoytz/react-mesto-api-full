@@ -213,7 +213,7 @@ function App() {
         setIsLoading(false);
         closeAllPopups();
       })
-      .catch((err) => console.log(localStorage.getItem('token')));
+      .catch((err) => console.log('Error'));
   }
 
   function handleUpdateAvatar(data) {
