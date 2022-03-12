@@ -1,7 +1,6 @@
 class Api {
   constructor(config){
     this._url = config.url;
-    this._headers = config.headers;
   }
 
 
@@ -10,7 +9,7 @@ class Api {
       method: 'GET',
       headers: {
         'Content-Type': 'application/json',
-        'Authorization': `Bearer ${token}`,
+        authorization: `Bearer ${token}`,
       },
     })
     .then(this._checkResOk)
@@ -27,7 +26,7 @@ class Api {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
-        'Authorization': `Bearer ${token}`,
+        authorization: `Bearer ${token}`,
       },
       body: JSON.stringify(data),
     })
@@ -45,7 +44,7 @@ class Api {
       method: 'DELETE',
       headers: {
         'Content-Type': 'application/json',
-        'Authorization': `Bearer ${token}`,
+        authorization: `Bearer ${token}`,
       },
     })
     .then(this._checkResOk)
@@ -62,7 +61,7 @@ class Api {
       method: 'GET',
       headers: {
         'Content-Type': 'application/json',
-        'Authorization': `Bearer ${token}`,
+        authorization: `Bearer ${token}`,
       },
     })
     .then(this._checkResOk)
@@ -79,7 +78,7 @@ class Api {
       method: 'PATCH',
       headers: {
         'Content-Type': 'application/json',
-        'Authorization': `Bearer ${token}`,
+        authorization: `Bearer ${token}`,
       },
       body: JSON.stringify(data),
     })
@@ -97,7 +96,7 @@ class Api {
       method: 'PATCH',
       headers: {
         'Content-Type': 'application/json',
-        'Authorization': `Bearer ${token}`,
+        authorization: `Bearer ${token}`,
       },
       body: JSON.stringify(data),
     })
@@ -115,7 +114,7 @@ class Api {
       method: 'PUT',
       headers: {
         'Content-Type': 'application/json',
-        'Authorization': `Bearer ${token}`,
+        authorization: `Bearer ${token}`,
       },
     })
     .then(this._checkResOk)
@@ -132,7 +131,7 @@ class Api {
       method: 'DELETE',
       headers: {
         'Content-Type': 'application/json',
-        'Authorization': `Bearer ${token}`,
+        authorization: `Bearer ${token}`,
       },
     })
     .then(this._checkResOk)
