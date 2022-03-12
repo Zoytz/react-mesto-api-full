@@ -8,9 +8,7 @@ const app = express();
 const { PORT = 3000 } = process.env;
 const { routes } = require('./routes/index');
 
-app.use(cors({
-  Origin: 'https://mestodeploy.nomoredomains.work',
-}));
+app.use(cors());
 app.use(requestLogger);
 app.use('/', routes);
 app.use(errorLogger);
