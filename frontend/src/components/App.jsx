@@ -207,13 +207,13 @@ function App() {
 
   function handleUpdateUser(data) {
     setIsLoading(true);
-    api.editUserInfo(data, localStorage.getItem('jwt').token)
+    api.editUserInfo(data, localStorage.getItem('jwt'))
       .then((res) => setCurrentUser(res))
       .then((res) => {
         setIsLoading(false);
         closeAllPopups();
       })
-      .catch((err) => console.log(localStorage.getItem('jwt').token));
+      .catch((err) => console.log(localStorage.getItem('jwt')));
   }
 
   function handleUpdateAvatar(data) {
