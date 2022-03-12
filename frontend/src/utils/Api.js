@@ -130,7 +130,7 @@ class Api {
 }
 
 const api = new Api({
-  url: 'https://api.mestodeploy.nomoredomains.work',
+  url: 'https://api.mestodeploy.nomoredomains.work/',
   headers: {
     'Content-Type': 'application/json',
   }
