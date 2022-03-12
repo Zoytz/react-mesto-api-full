@@ -48,10 +48,9 @@ function App() {
   const [isLoading, setIsLoading] = React.useState(false);
 
   const navigate = useNavigate();
-  const token = localStorage.getItem('jwt');
 
   React.useEffect(() => {
-    api.getInitialCards(token)
+    api.getInitialCards(localStorage.getItem('token'))
       .then((resCards) => {
         setCards(resCards);
       })
@@ -59,7 +58,7 @@ function App() {
   }, [])
 
   React.useEffect(() => {
-    api.getUserInfo(token)
+    api.getUserInfo(localStorage.getItem('token'))
       .then((resUser) => {
         setCurrentUser(resUser)
       })
@@ -79,13 +78,13 @@ function App() {
     const isLiked = card.likes.some(i => i._id === currentUser._id);
 
     if (!isLiked) {
-      api.setLikeCard(card._id, token)
+      api.setLikeCard(card._id, localStorage.getItem('token'))
         .then((newCard) => {
           setCards((cards) => cards.map((c) => c._id === card._id ? newCard : c));
         })
         .catch((err) => console.log('Ошибка в handleCardLike', err));
     } else {
-      api.delLikeCard(card._id, token)
+      api.delLikeCard(card._id, localStorage.getItem('token'))
         .then((newCard) => {
           setCards((cards) => cards.map((c) => c._id === card._id ? newCard : c));
         })
@@ -96,7 +95,7 @@ function App() {
 
   function handleCardDeleteSubmit() {
     setIsLoading(true);
-    api.deleteCard(selectedDeleteCard._id, token)
+    api.deleteCard(selectedDeleteCard._id, localStorage.getItem('token'))
       .then((res) => {
         setCards((cards) => cards.filter((c) => c._id !== selectedDeleteCard._id));
       })
@@ -116,7 +115,7 @@ function App() {
 
   function handleAddPlaceSubmit(data) {
     setIsLoading(true);
-    api.addCard(data, token)
+    api.addCard(data, localStorage.getItem('token'))
       .then((newCard) => {
         setCards([newCard, ...cards]);
         setIsLoading(false);
@@ -218,7 +217,7 @@ function App() {
 
   function handleUpdateAvatar(data) {
     setIsLoading(true);
-    api.editUserAvatar(data,)
+    api.editUserAvatar(data, localStorage.getItem('token'))
       .then((res) => setCurrentUser(res))
       .then((res) => {
         setIsLoading(false);
