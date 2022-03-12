@@ -207,7 +207,7 @@ function App() {
 
   function handleUpdateUser(data) {
     setIsLoading(true);
-    api.editUserInfo(data, token)
+    api.editUserInfo(data, localStorage.getItem('jwt'))
       .then((res) => setCurrentUser(res))
       .then((res) => {
         setIsLoading(false);
@@ -218,7 +218,7 @@ function App() {
 
   function handleUpdateAvatar(data) {
     setIsLoading(true);
-    api.editUserAvatar(data, token)
+    api.editUserAvatar(data,)
       .then((res) => setCurrentUser(res))
       .then((res) => {
         setIsLoading(false);
