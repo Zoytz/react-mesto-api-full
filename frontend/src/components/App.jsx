@@ -143,7 +143,7 @@ function App() {
       auth.checkToken(localStorage.getItem('token'))
         .then((res) => {
           setIsLoggedIn(true);
-          setUserEmail(res.data.email);
+          setUserEmail(res.email);
           navigate('/');
         })
         .catch((err) => {
