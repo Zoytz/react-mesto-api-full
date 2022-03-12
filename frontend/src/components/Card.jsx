@@ -5,7 +5,7 @@ const Card = React.memo((props) => {
 
   const userInfo = React.useContext(CurrentUserContext);
 
-  const isOwn = props.card.owner._id === userInfo._id;
+  const isOwn = props.card.owner === userInfo._id;
   const cardDeleteButtonClassName = (
     `card__del-btn ${isOwn ? '' : 'card__del-btn_disabled'}`
   );
