@@ -63,7 +63,7 @@ function App() {
         setCurrentUser(resUser)
       })
       .catch((err) => { console.log('Ошибочка вышла', err) });
-  }, []);
+  }, currentUser);
 
   function handleInfoTooltipStatus(boolean) {
     setInfoTooltipStatus(boolean);
