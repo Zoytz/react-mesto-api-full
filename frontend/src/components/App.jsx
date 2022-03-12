@@ -48,9 +48,10 @@ function App() {
   const [isLoading, setIsLoading] = React.useState(false);
 
   const navigate = useNavigate();
+  const token = localStorage.getItem('jwt');
 
   React.useEffect(() => {
-    api.getInitialCards()
+    api.getInitialCards(token)
       .then((resCards) => {
         setCards(resCards);
       })
@@ -58,7 +59,7 @@ function App() {
   }, [])
 
   React.useEffect(() => {
-    api.getUserInfo()
+    api.getUserInfo(token)
       .then((resUser) => {
         setCurrentUser(resUser)
       })
@@ -78,13 +79,13 @@ function App() {
     const isLiked = card.likes.some(i => i._id === currentUser._id);
 
     if (!isLiked) {
-      api.setLikeCard(card._id)
+      api.setLikeCard(card._id, token)
         .then((newCard) => {
           setCards((cards) => cards.map((c) => c._id === card._id ? newCard : c));
         })
         .catch((err) => console.log('Ошибка в handleCardLike', err));
     } else {
-      api.delLikeCard(card._id)
+      api.delLikeCard(card._id, token)
         .then((newCard) => {
           setCards((cards) => cards.map((c) => c._id === card._id ? newCard : c));
         })
@@ -95,7 +96,7 @@ function App() {
 
   function handleCardDeleteSubmit() {
     setIsLoading(true);
-    api.deleteCard(selectedDeleteCard._id)
+    api.deleteCard(selectedDeleteCard._id, token)
       .then((res) => {
         setCards((cards) => cards.filter((c) => c._id !== selectedDeleteCard._id));
       })
@@ -115,7 +116,7 @@ function App() {
 
   function handleAddPlaceSubmit(data) {
     setIsLoading(true);
-    api.addCard(data)
+    api.addCard(data, token)
       .then((newCard) => {
         setCards([newCard, ...cards]);
         setIsLoading(false);
@@ -206,7 +207,7 @@ function App() {
 
   function handleUpdateUser(data) {
     setIsLoading(true);
-    api.editUserInfo(data)
+    api.editUserInfo(data, token)
       .then((res) => setCurrentUser(res))
       .then((res) => {
         setIsLoading(false);
@@ -217,7 +218,7 @@ function App() {
 
   function handleUpdateAvatar(data) {
     setIsLoading(true);
-    api.editUserAvatar(data)
+    api.editUserAvatar(data, token)
       .then((res) => setCurrentUser(res))
       .then((res) => {
         setIsLoading(false);

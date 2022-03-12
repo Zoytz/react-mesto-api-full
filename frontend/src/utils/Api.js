@@ -1,5 +1,3 @@
-const token = localStorage.getItem('jwt');
-
 class Api {
   constructor(config){
     this._url = config.url;
@@ -7,10 +5,13 @@ class Api {
   }
 
 
-  getInitialCards() {
+  getInitialCards(token) {
     return fetch(`${this._url}cards`, {
       method: 'GET',
-      headers: this._headers,
+      headers: {
+        'Content-Type': 'application/json',
+        Authorization: `Bearer ${token}`,
+      },
     })
     .then(this._checkResOk)
     // .then((res) => {
@@ -21,10 +22,13 @@ class Api {
     // });
   }
 
-  addCard(data) {
+  addCard(data, token) {
     return fetch(`${this._url}cards`, {
       method: 'POST',
-      headers: this._headers,
+      headers: {
+        'Content-Type': 'application/json',
+        Authorization: `Bearer ${token}`,
+      },
       body: JSON.stringify(data),
     })
     .then(this._checkResOk)
@@ -36,10 +40,13 @@ class Api {
     // });
   }
 
-  deleteCard(cardId) {
+  deleteCard(cardId, token) {
     return fetch(`${this._url}cards/${cardId}`, {
       method: 'DELETE',
-      headers: this._headers,
+      headers: {
+        'Content-Type': 'application/json',
+        Authorization: `Bearer ${token}`,
+      },
     })
     .then(this._checkResOk)
     // .then((res) => {
@@ -50,10 +57,13 @@ class Api {
     // });
   }
 
-  getUserInfo() {
+  getUserInfo(token) {
     return fetch(`${this._url}users/me`, {
       method: 'GET',
-      headers: this._headers,
+      headers: {
+        'Content-Type': 'application/json',
+        Authorization: `Bearer ${token}`,
+      },
     })
     .then(this._checkResOk)
     // .then((res) => {
@@ -64,10 +74,13 @@ class Api {
     // });
   }
 
-  editUserInfo(data) {
+  editUserInfo(data, token) {
     return fetch(`${this._url}users/me`, {
       method: 'PATCH',
-      headers: this._headers,
+      headers: {
+        'Content-Type': 'application/json',
+        Authorization: `Bearer ${token}`,
+      },
       body: JSON.stringify(data),
     })
     .then(this._checkResOk)
@@ -79,10 +92,13 @@ class Api {
     // })
   }
 
-  editUserAvatar(data) {
+  editUserAvatar(data, token) {
     return fetch(`${this._url}users/me/avatar`, {
       method: 'PATCH',
-      headers: this._headers,
+      headers: {
+        'Content-Type': 'application/json',
+        Authorization: `Bearer ${token}`,
+      },
       body: JSON.stringify(data),
     })
     .then(this._checkResOk)
@@ -94,10 +110,13 @@ class Api {
     // })
   }
 
-  setLikeCard(cardId) {
+  setLikeCard(cardId, token) {
     return fetch(`${this._url}cards/likes/${cardId}`, {
       method: 'PUT',
-      headers: this._headers,
+      headers: {
+        'Content-Type': 'application/json',
+        Authorization: `Bearer ${token}`,
+      },
     })
     .then(this._checkResOk)
     // .then((res) => {
@@ -108,10 +127,13 @@ class Api {
     // });
   }
 
-  delLikeCard(cardId) {
+  delLikeCard(cardId, token) {
     return fetch(`${this._url}cards/likes/${cardId}`, {
       method: 'DELETE',
-      headers: this._headers,
+      headers: {
+        'Content-Type': 'application/json',
+        Authorization: `Bearer ${token}`,
+      },
     })
     .then(this._checkResOk)
     // .then((res) => {
@@ -135,7 +157,6 @@ const api = new Api({
   url: 'https://api.mestodeploy.nomoredomains.work/',
   headers: {
     'Content-Type': 'application/json',
-    authorization: `Bearer ${token}`,
   }
 })
 
