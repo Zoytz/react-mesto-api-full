@@ -151,7 +151,7 @@ function App() {
           navigate('/');
         });
     }
-  }, userEmail);
+  }, isLoggedIn, userEmail);
 
   function handleInfoTooltipOpen(boolean) {
     setIsInfoTooltipOpen(boolean);
