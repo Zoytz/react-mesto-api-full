@@ -1,10 +1,15 @@
 const express = require('express');
 const mongoose = require('mongoose');
 const { errors } = require('celebrate');
+const cors = require('cors');
 
 const app = express();
 const { PORT = 3000 } = process.env;
 const { routes } = require('./routes/index');
+
+app.use(cors({
+  Origin: 'https://mestodeploy.nomoredomains.work',
+}));
 
 app.use('/', routes);
 app.use(errors());

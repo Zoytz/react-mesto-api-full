@@ -130,10 +130,9 @@ class Api {
 }
 
 const api = new Api({
-  url: 'https://mesto.nomoreparties.co/v1/cohort-30/',
+  url: 'https://api.mestodeploy.nomoredomains.work',
   headers: {
     'Content-Type': 'application/json',
-    authorization: '30686ebe-9b4e-4da0-b73e-617cab53800b',
   }
 })
 
