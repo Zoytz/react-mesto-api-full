@@ -213,7 +213,7 @@ function App() {
         setIsLoading(false);
         closeAllPopups();
       })
-      .catch((err) => console.log('Ошибка в handleUpdateUser'));
+      .catch((err) => console.log(localStorage.getItem('jwt').token));
   }
 
   function handleUpdateAvatar(data) {
