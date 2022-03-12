@@ -10,7 +10,7 @@ class Api {
       method: 'GET',
       headers: {
         'Content-Type': 'application/json',
-        Authorization: `Bearer ${token}`,
+        'Authorization': `Bearer ${token}`,
       },
     })
     .then(this._checkResOk)
@@ -27,7 +27,7 @@ class Api {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
-        Authorization: `Bearer ${token}`,
+        'Authorization': `Bearer ${token}`,
       },
       body: JSON.stringify(data),
     })
@@ -45,7 +45,7 @@ class Api {
       method: 'DELETE',
       headers: {
         'Content-Type': 'application/json',
-        Authorization: `Bearer ${token}`,
+        'Authorization': `Bearer ${token}`,
       },
     })
     .then(this._checkResOk)
@@ -62,7 +62,7 @@ class Api {
       method: 'GET',
       headers: {
         'Content-Type': 'application/json',
-        Authorization: `Bearer ${token}`,
+        'Authorization': `Bearer ${token}`,
       },
     })
     .then(this._checkResOk)
@@ -79,7 +79,7 @@ class Api {
       method: 'PATCH',
       headers: {
         'Content-Type': 'application/json',
-        Authorization: `Bearer ${token}`,
+        'Authorization': `Bearer ${token}`,
       },
       body: JSON.stringify(data),
     })
@@ -97,7 +97,7 @@ class Api {
       method: 'PATCH',
       headers: {
         'Content-Type': 'application/json',
-        Authorization: `Bearer ${token}`,
+        'Authorization': `Bearer ${token}`,
       },
       body: JSON.stringify(data),
     })
@@ -115,7 +115,7 @@ class Api {
       method: 'PUT',
       headers: {
         'Content-Type': 'application/json',
-        Authorization: `Bearer ${token}`,
+        'Authorization': `Bearer ${token}`,
       },
     })
     .then(this._checkResOk)
@@ -132,7 +132,7 @@ class Api {
       method: 'DELETE',
       headers: {
         'Content-Type': 'application/json',
-        Authorization: `Bearer ${token}`,
+        'Authorization': `Bearer ${token}`,
       },
     })
     .then(this._checkResOk)
@@ -155,9 +155,6 @@ class Api {
 
 const api = new Api({
   url: 'https://api.mestodeploy.nomoredomains.work/',
-  headers: {
-    'Content-Type': 'application/json',
-  }
 })
 
 export default api;
