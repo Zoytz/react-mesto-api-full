@@ -207,7 +207,7 @@ function App() {
 
   function handleUpdateUser(data) {
     setIsLoading(true);
-    api.editUserInfo(data, localStorage.getItem('jwt'))
+    api.editUserInfo(data, localStorage.getItem('jwt').token)
       .then((res) => setCurrentUser(res))
       .then((res) => {
         setIsLoading(false);
