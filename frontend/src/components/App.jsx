@@ -76,6 +76,7 @@ function App() {
   function handleCardLike(card) {
 
     const isLiked = card.likes.some(i => i._id === currentUser._id);
+    console.log(currentUser._id);
 
     if (!isLiked) {
       api.setLikeCard(card._id, localStorage.getItem('token'))
