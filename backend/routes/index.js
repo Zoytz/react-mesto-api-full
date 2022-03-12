@@ -12,6 +12,11 @@ routes.use(express.json());
 
 routes.use('/users', auth, userRoutes);
 routes.use('/cards', auth, cardsRoutes);
+routes.get('/crash-test', () => {
+  setTimeout(() => {
+    throw new Error('Сервер сейчас упадёт');
+  }, 0);
+});
 routes.post('/signin', validateUser, login);
 routes.post('/signup', validateUser, createUser);
 routes.use('*', auth, (req, res, next) => {
