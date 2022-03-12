@@ -1,3 +1,5 @@
+const token = localStorage.getItem('jwt');
+
 class Api {
   constructor(config){
     this._url = config.url;
@@ -133,6 +135,7 @@ const api = new Api({
   url: 'https://api.mestodeploy.nomoredomains.work/',
   headers: {
     'Content-Type': 'application/json',
+    'Authorization': `Bearer ${token}`,
   }
 })
 
