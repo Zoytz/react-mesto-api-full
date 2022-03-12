@@ -1,4 +1,4 @@
-export const BASE_URL = 'api.mestodeploy.nomoredomains.work';
+export const BASE_URL = 'https://api.mestodeploy.nomoredomains.work';
 
 function checkResOk(res) {
   if (res.ok) {
