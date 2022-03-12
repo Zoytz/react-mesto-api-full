@@ -234,7 +234,7 @@ function App() {
         handleLogin();
         localStorage.setItem('token', `${res.jwt}`);
         navigate('/');
-        auth.checkToken(res.token)
+        auth.checkToken(res.jwt)
           .then((res) => {
             handleChangeUserEmail(res.data.email)
           })
