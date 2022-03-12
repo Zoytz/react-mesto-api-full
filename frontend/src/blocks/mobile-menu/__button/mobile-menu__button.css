@@ -1,0 +1,11 @@
+.mobile-menu__button {
+  padding: 0;
+  color: #fff;
+  background: none;
+  border: none;
+  margin-bottom: 40px;
+}
+
+.mobile-menu__button:hover {
+  opacity: .6;
+}

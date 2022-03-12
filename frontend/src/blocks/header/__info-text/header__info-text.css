@@ -1,0 +1,15 @@
+.header__info-text {
+  color: #fff;
+  margin-right: 24px;
+}
+
+.header__info-text:hover {
+  opacity: .6;
+}
+
+@media screen and (max-width: 460px) {
+  .header__info-text {
+    display: none;
+  }
+
+}

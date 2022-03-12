@@ -1,0 +1,16 @@
+.elements {
+  width: 100%;
+  max-width: 880px;
+  padding-top: 50px;
+  color: #000;
+  box-sizing: border-box;
+}
+
+@media screen and (max-width: 1023px) {
+  .elements {
+    padding-right: 19px;
+    padding-left: 19px;
+    padding-top: 36px;
+  }
+
+}

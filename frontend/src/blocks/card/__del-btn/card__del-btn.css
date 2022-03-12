@@ -1,0 +1,18 @@
+.card__del-btn {
+  padding: 0;
+  border: 0;
+  background-image: url(../../../images/Trash.svg);
+  background-size: 18px 19px;
+  background-repeat: no-repeat;
+  width: 18px;
+  height: 19px;
+  position: absolute;
+  right: 15px;
+  top: 18px;
+  background-color: rgba(0, 0, 0, 0);
+  transition: opacity .2s linear;
+}
+
+.card__del-btn:hover {
+  opacity: 0.6;
+}

@@ -1,0 +1,18 @@
+.form {
+  max-width: 430px;
+  width: 100vw;
+  background-color: #fff;
+  margin: auto;
+  padding: 34px 36px 37px;
+  border-radius: 10px;
+  font-size: 0;
+  position: relative;
+  box-sizing: border-box;
+}
+
+@media screen and (max-width: 1023px) {
+  .form {
+    width:calc(100vw - 19px*2);
+    padding: 25px 22px 25px;
+  }
+}

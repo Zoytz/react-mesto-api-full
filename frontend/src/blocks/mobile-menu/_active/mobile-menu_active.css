@@ -1,0 +1,5 @@
+.mobile-menu_active {
+  display: flex;
+  opacity: 1;
+  transition: opacity 0.3 linear;
+}

@@ -1,0 +1,15 @@
+.header__menu-btn_active {
+  background-color: #000;
+}
+
+.header__menu-btn_active::before {
+  transform: translate(0, 200%) rotate(45deg);
+}
+
+.header__menu-btn_active::after {
+  transform: translate(0, -200%) rotate(-45deg);
+}
+
+.header__menu-btn_active:hover {
+  opacity: .6;
+}

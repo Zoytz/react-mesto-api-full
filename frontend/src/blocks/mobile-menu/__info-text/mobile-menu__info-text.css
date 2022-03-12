@@ -1,0 +1,10 @@
+.mobile-menu__info-text {
+  color: #fff;
+  margin: 0;
+  margin-bottom: 18px;
+  text-align: center;
+}
+
+.mobile-menu__info-text:hover {
+  opacity: .6;
+}

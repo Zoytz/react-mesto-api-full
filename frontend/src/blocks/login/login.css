@@ -1,0 +1,17 @@
+.login {
+  width: 100%;
+  max-width: 880px;
+  padding-top: 60px;
+  color: #000;
+  box-sizing: border-box;
+  font-family: 'inter', Arial, Helvetica, sans-serif;
+}
+
+@media screen and (max-width: 1023px) {
+  .login {
+    padding-right: 30px;
+    padding-left: 30px;
+    padding-top: 40px;
+  }
+
+}

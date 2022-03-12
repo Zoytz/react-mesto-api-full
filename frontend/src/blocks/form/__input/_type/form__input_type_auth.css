@@ -1,0 +1,14 @@
+.form__input_type_auth {
+  background-color: #000;
+  border-bottom: 2px solid #CCCCCC;
+  color: #CCCCCC;
+}
+
+.form__input_type_auth::placeholder {
+  color: #CCCCCC;
+  font-family: Inter;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 17px;
+}
